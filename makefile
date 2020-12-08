@@ -14,3 +14,15 @@ apply:
 .PHONY: list-tables
 list-tables:
 	docker run --rm --network="host" -it -e AWS_REGION=us-east-1 -e AWS_SECRET_ACCESS_KEY=xxxxxxxx -e AWS_ACCESS_KEY_ID=yyyyyyyyyy amazon/aws-cli dynamodb list-tables --endpoint-url ${DDB_ENDPOINT}
+
+.PHONY: scan-items
+scan-items:
+	docker run --rm --network="host" -it -e AWS_REGION=us-east-1 -e AWS_SECRET_ACCESS_KEY=xxxxxxxx -e AWS_ACCESS_KEY_ID=yyyyyyyyyy amazon/aws-cli dynamodb scan --table-name Obsessions --endpoint-url ${DDB_ENDPOINT}
+
+.PHONY: iex 
+iex:
+	docker run --rm -it --network="host" -v ${PWD}:/app -w /app/ddb_importer elixir iex -S mix
+
+.PHONY: ddb-build 
+ddb-build:
+	docker run --rm -it -v ${PWD}:/app -w /app/ddb_importer elixir mix deps.get
