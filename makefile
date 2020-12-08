@@ -23,6 +23,10 @@ scan-items:
 iex:
 	docker run --rm -it --network="host" -v ${PWD}:/app -w /app/ddb_importer elixir iex -S mix
 
+.PHONY: import 
+import:
+	docker run --rm -it --network="host" -v ${PWD}:/app -w /app/ddb_importer elixir mix run -e DdbImporter.csv_to_ddb
+
 .PHONY: ddb-build 
 ddb-build:
 	docker run --rm -it -v ${PWD}:/app -w /app/ddb_importer elixir mix deps.get

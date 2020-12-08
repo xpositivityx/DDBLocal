@@ -7,9 +7,5 @@
 * build the runtime for elixir:
 ```bash
 make ddb-build
-make iex
-```
-* in the shell run:
-```elixir
-DdbImporter.csv_to_ddb
+make import
 ```
