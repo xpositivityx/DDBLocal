@@ -29,3 +29,8 @@ make import
 ```bash
 make scan-items
 ```
+
+* tear down table:
+```bash
+make destroy 
+```
