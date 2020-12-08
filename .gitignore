@@ -1,0 +1,5 @@
+obsessions.csv
+terraform/.terraform
+terraform/*.tfstate
+terraform/*.tfstate.backup
+dynamodb_data/**
