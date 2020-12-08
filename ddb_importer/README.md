@@ -7,5 +7,5 @@
 * build the runtime for elixir:
 ```bash
 make ddb-build
-make import
+make path=path/to/csv/ import
 ```

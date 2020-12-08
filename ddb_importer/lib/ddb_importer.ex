@@ -8,8 +8,8 @@ defmodule DdbImporter do
   NimbleCSV.define(Parser, separator: ",", escape: "\"")
   @doc """
   """
-  def csv_to_ddb do
-    'priv/obsessions.csv'
+  def csv_to_ddb(path) do
+    path
     |> File.stream!
     |> Parser.parse_stream
     |> Enum.each(&DdbImporter.put_record(&1))

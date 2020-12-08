@@ -22,7 +22,7 @@ make list-tables
 * build the runtime for elixir:
 ```bash
 make ddb-build
-make import
+make path=path/to/file.csv import
 ```
 
 * verify data:

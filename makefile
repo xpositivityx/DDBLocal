@@ -29,7 +29,7 @@ iex:
 
 .PHONY: import 
 import:
-	docker run --rm -it --network="host" -v ${PWD}:/app -w /app/ddb_importer elixir mix run -e DdbImporter.csv_to_ddb
+	docker run --rm -it --network="host" -v ${PWD}:/app -w /app/ddb_importer elixir mix run -e "DdbImporter.csv_to_ddb('$(path)')"
 
 .PHONY: ddb-build 
 ddb-build:
