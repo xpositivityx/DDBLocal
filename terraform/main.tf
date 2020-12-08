@@ -31,14 +31,14 @@ provider "aws" {
 
 resource "aws_dynamodb_table" "obsessions" {
     name = "Obsessions"
-    hash_key= "obsession_id"
+    hash_key= "user_id"
     range_key= "created_at"
     billing_mode   = "PROVISIONED"
     read_capacity  = 1
     write_capacity = 1
 
     attribute {
-        name = "obsession_id"
+        name = "user_id"
         type = "S"
     }
 

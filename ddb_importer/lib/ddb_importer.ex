@@ -28,7 +28,7 @@ defmodule DdbImporter do
     taxonomy_id
   ]) do
     obsession = %Obsession{
-      obsession_id: user_id,
+      user_id: user_id,
       created_at: created_at,
       variant_id: variant_id,
       product_id: product_id,

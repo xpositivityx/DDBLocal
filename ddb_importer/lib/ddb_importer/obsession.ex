@@ -1,7 +1,7 @@
 defmodule DdbImporter.Obsession do
   @derive [ExAws.Dynamo.Encodable]
   defstruct [
-    :obsession_id,
+    :user_id,
     :created_at,
     :variant_id,
     :product_id,
