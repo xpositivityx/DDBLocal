@@ -16,3 +16,19 @@ Verify table creation:
 make list-tables
 ```
 
+### Import data:
+* Add priv/obsessions.csv
+* build the runtime for elixir:
+```bash
+make ddb-build
+make iex
+```
+* in the shell run:
+```elixir
+DdbImporter.csv_to_ddb
+```
+
+* verify data:
+```bash
+make scan-items
+```
