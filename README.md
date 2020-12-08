@@ -6,6 +6,10 @@
 * make target for running aws cli in docker against local dynamodb
 * mix project for ingesting csv -> dynamodb using ex_aws_dynamodb and nimble_csv
 
+### GUI Query tools
+ddb is running at localhost:8000
+[NoSQL Workbench](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.settingup.html)
+
 ### Setup:
 ```bash 
 make ddb
