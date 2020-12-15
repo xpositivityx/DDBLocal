@@ -34,8 +34,8 @@ resource "aws_dynamodb_table" "obsessions" {
     hash_key= "user_id"
     range_key= "created_at"
     billing_mode   = "PROVISIONED"
-    read_capacity  = 1
-    write_capacity = 1
+    read_capacity  = 2
+    write_capacity = 2
 
     attribute {
         name = "user_id"
@@ -47,8 +47,17 @@ resource "aws_dynamodb_table" "obsessions" {
         type = "S"
     }
 
-    tags = {
-        Name = "dynamo-poc",
-        Environment = "dev"
+    global_secondary_index {
+        name               = "user_product_index"
+        hash_key           = "user_id"
+        range_key          = "product_id"
+        write_capacity     = 1
+        read_capacity      = 1
+        projection_type    = "KEYS_ONLY"
+    }
+
+    attribute {
+        name = "product_id"
+        type = "S"
     }
 }
